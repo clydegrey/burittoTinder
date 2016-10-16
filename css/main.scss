@@ -208,7 +208,9 @@ body {
         
         img {
             width:100%;
+            transform:scale(1) translate3d(0,0,-1);
             transition: all .4s ease;
+
         }
     }
 }
@@ -224,12 +226,13 @@ body {
         transform:translate(-50%,-50%);
         opacity:0;
         transition:opacity .4s ease;
+        // z-index:10000;
         }
 
 .ingredients__box--pictures:hover{
     cursor:pointer;
     background-color: $color-grey;
-    img {transform:scale(1.2);
+    img {transform:scale(1.2) translate3d(0,0,0);
             }
                                 }
 @media (max-width: 800px) {
@@ -288,15 +291,44 @@ body {
     font-weight: lighter;
 }
 
+
+.messageWrapper {width:100%;
+     background-color:$color-bk-secondary;
+     display:flex;
+     flex-wrap:no-wrap;
+
+}
+
+.raccoon {width:50%;
+        padding-top:1rem;
+        img {width:30%;
+            min-width:120px;
+            margin-left:4%;
+            margin-right:2%;
+            float:left;
+            cursor:pointer;
+           }
+        p {color:$color-bk-main;
+            font-family:$font-sub;
+            padding:0;
+           
+        }
+        i {font-size:3rem;}
+}
 .calorieBox {
-    padding:1.5rem 0;
+    padding:1rem 0;
     text-align:center;
     color:$color-bk-main;
     font-family: $font-sub;
     font-size: calc(1rem + 1vw);
     background-color:$color-bk-secondary;
-    box-shadow: 0 -.4rem 1rem 0 rgba(0,0,0,.2);
+    // box-shadow: 0 -.4rem 1rem 0 rgba(0,0,0,.2);
+    width:50%;
 }
+
+
+
+
 
 .tortilla {
     background-color: $color-bk-blue;
@@ -351,6 +383,9 @@ footer {
     }
     
     .ingredients__box--pictures i {font-size:3.75rem;}
+    .raccoon i {display:none;}
+    .raccoon img {padding-bottom:.5rem;
+                  padding-top:.5rem;}
 }
 
 @media (max-width: 600px) {
@@ -360,6 +395,9 @@ footer {
     }
     
     .ingredients__box--pictures i {font-size:2.75rem;}
+    .messageWrapper {padding-bottom:.75rem;}
+    .raccoon p,
+    .raccoon i {display:none;}
 }
 
 

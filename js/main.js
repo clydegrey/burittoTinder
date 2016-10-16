@@ -89,7 +89,10 @@ var burrito = {
 
 	},
 	removeIngredient: function (ingredient) {
+		console.log('I am passing in:' + ingredient);
+
 		var ingredientInfo = burrito.ingredients[ingredient];
+		console.log(ingredientInfo['calories']);
 		burrito.burritoCalories -= ingredientInfo['calories'];
 		var index = burrito.ingredientsList.indexOf(ingredientInfo['name']); //Required to find index # for splicing
 		burrito.ingredientsList.splice(index,1);
@@ -133,6 +136,16 @@ $('.ingredient').change(function() {
 		$('li:nth-of-type('+i+')').css('text-align', 'right');
 	}
 }); //end click function
+
+$('.raccoon img').on('click', function(){
+burrito.ingredientsList=[];
+burrito.burritoCalories = 0;
+$('.ingredients__box i').css('opacity',0);
+$('input:checkbox').removeAttr('checked');
+updateView();
+
+});
+
 
 
 }); //End of document ready
