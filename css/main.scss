@@ -337,7 +337,12 @@ body {
         -moz-column-gap: 20px;
         -webkit-column-gap: 20px;
         column-gap: 20px;
+        
     }
+    .messageBox .tweet a {font-size:1.2rem;
+                       
+                                            } 
+
 }
 
 .noIngredients {
@@ -459,6 +464,19 @@ footer {
     .ingredients__box--pictures i {font-size:2.75rem;}
     .raccoon p,
     .raccoon i {display:none;}
+
+    .messageBox .tweet {background-color:transparent;
+                        border:none;
+                        text-align:right;
+                        margin-top:0;
+                        span{display:none;}
+                        i {color:$color-bk-blue;
+                        font-size:2.5rem;
+
+                        }
+                        &:hover{background-color:transparent;
+                                border:none}
+                        }
 }
 
 

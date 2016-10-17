@@ -318,6 +318,9 @@ body {
     -webkit-column-gap: 20px;
     column-gap: 20px;
   }
+  .messageBox .tweet a {
+    font-size: 1.2rem;
+  }
 }
 
 .noIngredients {
@@ -460,6 +463,23 @@ footer a:hover {
   .raccoon p,
   .raccoon i {
     display: none;
+  }
+  .messageBox .tweet {
+    background-color: transparent;
+    border: none;
+    text-align: right;
+    margin-top: 0;
+  }
+  .messageBox .tweet span {
+    display: none;
+  }
+  .messageBox .tweet i {
+    color: #5BC0EB;
+    font-size: 2.5rem;
+  }
+  .messageBox .tweet:hover {
+    background-color: transparent;
+    border: none;
   }
 }
 
