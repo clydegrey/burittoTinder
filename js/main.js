@@ -8,12 +8,6 @@ $('.tooltip').tooltipster({
    
 });
 
-
-
-
-
-
-
 var burrito = {
 	ingredients: {
 		lettuce: {
@@ -76,7 +70,9 @@ var burrito = {
 			calories: 3,
 			name: 'Lime',
 			portionSize: 10
-		}
+		},
+
+
 		
 	},
 	ingredientsList: [],
@@ -100,6 +96,8 @@ var burrito = {
 	} //end of updateCalories function
 }; //End of burrito object
 
+var twitter__message = (`https://twitter.com/intent/tweet?text=Anyone wanna share a ${burrito.burritoCalories} calorie buritto?`);
+
 function updateView() {
 	var htmlList="";
 
@@ -114,6 +112,8 @@ function updateView() {
 	
 	$('.ingredientsList').html(htmlList);
 	$('.calorieMeter').text(burrito.burritoCalories);
+	
+
 
 };
 
@@ -144,6 +144,16 @@ $('.ingredients__box i').css('opacity',0);
 $('input:checkbox').removeAttr('checked');
 updateView();
 
+});
+
+// $('tweet').mouseEnter().
+// alert();
+
+
+$('.tweet').on('mouseenter',function(){
+
+ var twitter__message = (`https://twitter.com/intent/tweet?text=Anyone wanna share a ${burrito.burritoCalories} calorie burrito? Made a tasty one on Burrito Tinder!`);
+ document.getElementById("tweet").setAttribute("href", twitter__message);
 });
 
 

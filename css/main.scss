@@ -34,6 +34,29 @@ html {
     text-shadow: none;
 }
 
+
+a:link {
+    font-size: 1rem;
+    font-weight:600;
+    text-decoration: none;
+    }
+a:visited {
+    font-size:1rem;
+    font-weight:600;
+    text-decoration: none;
+    }
+a:hover {
+    font-size:1rem;
+    font-weight:600;
+    text-decoration: none;
+    }
+a:active {
+    font-size:1rem;
+    font-weight:600;
+    text-decoration: none;
+    }
+
+
 /*
  * A better looking default horizontal rule
  */
@@ -215,25 +238,25 @@ body {
     }
 }
 
-
-
-.ingredients__box i {font-size:5rem;
-        color:rgba($color-logo, .9);
-        color:rgba(0,50,0,1);
-        position:absolute;
-        left:50%;
-        top:50%;
-        transform:translate(-50%,-50%);
-        opacity:0;
-        transition:opacity .4s ease;
-        // z-index:10000;
-        }
+.ingredients__box i {
+    font-size:5rem;
+    color:white;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    opacity:0;
+    transition:opacity .4s ease;
+    z-index:10000;
+    text-shadow: 2px 2px rgba(0,0,0,0.1);
+}
 
 .ingredients__box--pictures:hover{
     cursor:pointer;
     background-color: $color-grey;
-    img {transform:scale(1.2) translate3d(0,0,0);
-            }
+    img {
+        transform:scale(1.2) translate3d(0,0,0);
+    }
                                 }
 @media (max-width: 800px) {
     .ingredients__box label {
@@ -251,6 +274,7 @@ body {
     font-size: calc(1rem + 1vw);
     background-color:rgb(0,50,0);
     width:50%;
+    position:relative;
    
     h4 { //Invitation text
         font-size: calc(1rem + 2vw);
@@ -276,6 +300,36 @@ body {
             color: white;
         }
     }
+    .tweet{
+        position:absolute;
+        right:0;
+        bottom:0;
+        
+        background-color:$color-logo-shadow;
+        width:90%;
+        margin-right:5%;
+        border-radius:15px 15px 0 0;
+        border-top:3px solid $color-logo;
+        border-left:3px solid $color-logo;
+        border-right:3px solid $color-logo;
+        transition:background-color .35s ease, color .35s ease, border .35s ease;
+        a{
+            color:#fff;
+            font-size:1.5rem;
+            display:block;
+            width:100%;
+        }
+        i {
+            padding:0 1rem;
+        }
+        &:hover {
+            background-color: $color-bk-blue;
+            border-top:3px solid #fff;
+            border-left:3px solid #fff;
+            border-right:3px solid #fff;
+            }
+    }
+
 }
 
 @media (max-width: 800px) {
@@ -296,24 +350,31 @@ body {
      background-color:$color-bk-secondary;
      display:flex;
      flex-wrap:no-wrap;
-
 }
 
 .raccoon {width:50%;
-        padding-top:1rem;
-        img {width:30%;
-            min-width:120px;
-            margin-left:4%;
-            margin-right:2%;
-            float:left;
-            cursor:pointer;
-           }
-        p {color:$color-bk-main;
-            font-family:$font-sub;
-            padding:0;
-           
+    img {
+        width: 30%;
+        min-width:120px;
+        margin-left:4%;
+        margin-right:2%;
+        float:left;
+        cursor:pointer;
+        transition: 1s;
+        &:hover {
+            transform: rotate(-5deg) translate3d(0,0,0);
         }
-        i {font-size:3rem;}
+    }
+    p {
+        margin-top:1rem;
+        color:$color-bk-main;
+        font-family:$font-sub;
+        padding:0;   
+    }
+    i {
+        font-size:3rem;
+        color: $color-bk-main;
+    }
 }
 .calorieBox {
     padding:1rem 0;
@@ -325,10 +386,6 @@ body {
     // box-shadow: 0 -.4rem 1rem 0 rgba(0,0,0,.2);
     width:50%;
 }
-
-
-
-
 
 .tortilla {
     background-color: $color-bk-blue;
@@ -372,6 +429,13 @@ footer {
     padding: 2rem 0;
     color: $color-logo;
     font-family: $font-sub;
+
+    a{color: $color-logo;
+      transition:color .35s ease;
+    &:hover{
+        color:$color-logo-shadow;
+    }
+    }
 }
 
 
@@ -384,8 +448,6 @@ footer {
     
     .ingredients__box--pictures i {font-size:3.75rem;}
     .raccoon i {display:none;}
-    .raccoon img {padding-bottom:.5rem;
-                  padding-top:.5rem;}
 }
 
 @media (max-width: 600px) {
@@ -395,7 +457,6 @@ footer {
     }
     
     .ingredients__box--pictures i {font-size:2.75rem;}
-    .messageWrapper {padding-bottom:.75rem;}
     .raccoon p,
     .raccoon i {display:none;}
 }
